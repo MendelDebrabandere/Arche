@@ -27,10 +27,10 @@ void MoveRightCommand::Execute()
 void MoveRightCommand::Move()
 {
 	//Add movespeed and make frame independent movement
-	float horMovement = dae::Time::GetInstance().GetDelta() * m_Speed;
+	float horMovement = arche::Time::GetInstance().GetDelta() * m_Speed;
 
 	//Transform GO
-	auto transform = m_pGo->GetComponent<dae::Transform>();
+	auto transform = m_pGo->GetComponent<arche::Transform>();
 	if (transform)
 	transform->Translate(horMovement, 0);
 }

@@ -4,6 +4,6 @@
 class Bubble final
 {
 public:
-	static dae::GameObject* CreateBubble(dae::Scene* pScene, const dae::GameObject* pShooterObj);
+	static arche::GameObject* CreateBubble(arche::Scene* pScene, const arche::GameObject* pShooterObj);
 };
 

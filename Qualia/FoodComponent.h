@@ -2,7 +2,7 @@
 #include "Component.h"
 #include "SpriteDataPreset.h"
 
-class FoodComponent final : public dae::Component
+class FoodComponent final : public arche::Component
 {
 public:
 	enum class FoodType
@@ -37,8 +37,8 @@ private:
 	float m_Timer{};
 
 	static float m_SpriteScale;
-	static dae::SpriteDataPreset m_GreenScore100;
-	static dae::SpriteDataPreset m_GreenScore200;
-	static dae::SpriteDataPreset m_BlueScore100;
-	static dae::SpriteDataPreset m_BlueScore200;
+	static arche::SpriteDataPreset m_GreenScore100;
+	static arche::SpriteDataPreset m_GreenScore200;
+	static arche::SpriteDataPreset m_BlueScore100;
+	static arche::SpriteDataPreset m_BlueScore200;
 };

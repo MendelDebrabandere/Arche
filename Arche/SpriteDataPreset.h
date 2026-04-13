@@ -1,6 +1,6 @@
 #pragma once
 
-namespace dae
+namespace arche
 {
 	//This is a preset that can be saved in the class that changes the sprite around
 	//So that there is no need to hard code all those values in code and you can store them

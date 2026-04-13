@@ -3,7 +3,7 @@
 
 #include "Observer.h"
 
-namespace dae
+namespace arche
 {
 	template<typename... Args>
 	class Subject final

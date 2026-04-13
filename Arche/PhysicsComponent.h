@@ -1,7 +1,7 @@
 #pragma once
 #include "Component.h"
 
-namespace dae
+namespace arche
 {
 	struct CollisionState
 	{
@@ -11,7 +11,7 @@ namespace dae
 		bool LeftCollision{};
 	};
 
-	class PhysicsComponent final : public dae::Component
+	class PhysicsComponent final : public arche::Component
 	{
 	public:
 		PhysicsComponent() = default;

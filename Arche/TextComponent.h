@@ -6,7 +6,7 @@
 #include "Font.h"
 #include "TextureComponent.h"
 
-namespace dae
+namespace arche
 {
 	class TextComponent final : public Component
 	{

@@ -2,7 +2,7 @@
 #include "Component.h"
 #include "SpriteDataPreset.h"
 
-class RockComponent final : public dae::Component
+class RockComponent final : public arche::Component
 {
 public:
 	RockComponent() = default;
@@ -36,5 +36,5 @@ private:
 	float m_CrashingTimer{};
 
 	static float m_SpriteScale;
-	static dae::SpriteDataPreset m_CrashAnim;
+	static arche::SpriteDataPreset m_CrashAnim;
 };

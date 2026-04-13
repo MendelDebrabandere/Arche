@@ -2,7 +2,7 @@
 #include "Component.h"
 #include "SpriteDataPreset.h"
 
-class MaitaComponent final : public dae::Component
+class MaitaComponent final : public arche::Component
 {
 public:
 	MaitaComponent();
@@ -21,6 +21,6 @@ private:
 	float m_RockThrowingTimer{};
 
 	static float m_SpriteScale;
-	static dae::SpriteDataPreset m_WalkingPreset;
-	static dae::SpriteDataPreset m_AttackingPreset;
+	static arche::SpriteDataPreset m_WalkingPreset;
+	static arche::SpriteDataPreset m_AttackingPreset;
 };

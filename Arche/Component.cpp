@@ -1,12 +1,12 @@
 #include "Component.h"
 #include "GameObject.h"
 
-dae::GameObject* dae::Component::GetOwner() const
+arche::GameObject* arche::Component::GetOwner() const
 {
 	return m_pOwner;
 }
 
-void dae::Component::SetOwner(GameObject* pParent)
+void arche::Component::SetOwner(GameObject* pParent)
 {
 	m_pOwner = pParent;
 }

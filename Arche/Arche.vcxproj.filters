@@ -7,9 +7,6 @@
     <Filter Include="Component">
       <UniqueIdentifier>{d58416a0-d627-4c41-9a6e-5f4ca81ed59b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Minigin">
-      <UniqueIdentifier>{2aa92355-fef6-4379-a153-a0a7a8bbce9c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object">
       <UniqueIdentifier>{ec6ae77c-43fd-44de-ae35-49d5f8081940}</UniqueIdentifier>
     </Filter>
@@ -40,6 +37,9 @@
     <Filter Include="Events">
       <UniqueIdentifier>{0e049217-7433-43fe-999e-8b81b6f705e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arche">
+      <UniqueIdentifier>{2aa92355-fef6-4379-a153-a0a7a8bbce9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h">
@@ -63,8 +63,8 @@
     <ClInclude Include="TextComponent.h">
       <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="Minigin.h">
-      <Filter>Minigin</Filter>
+    <ClInclude Include="Arche.h">
+      <Filter>Arche</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Object</Filter>
@@ -152,8 +152,8 @@
     <ClCompile Include="TextComponent.cpp">
       <Filter>Component</Filter>
     </ClCompile>
-    <ClCompile Include="Minigin.cpp">
-      <Filter>Minigin</Filter>
+    <ClCompile Include="Arche.cpp">
+      <Filter>Arche</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Object</Filter>

@@ -16,11 +16,11 @@
 
 void StartSinglePlayerCommand::Execute()
 {
-	auto& sceneManager = dae::SceneManager::GetInstance();
+	auto& sceneManager = arche::SceneManager::GetInstance();
 	auto scene = sceneManager.GetActiveScene();
 
-	dae::InputManager::GetInstance().RemoveAllInputs();
-	dae::InputManager::GetInstance().AddKeyboardCommand(SDLK_F2, dae::InputManager::InputType::OnDown, std::make_unique<ToggleSoundSysCommand>());
+	arche::InputManager::GetInstance().RemoveAllInputs();
+	arche::InputManager::GetInstance().AddKeyboardCommand(SDLK_F2, arche::InputManager::InputType::OnDown, std::make_unique<ToggleSoundSysCommand>());
 
 	scene->RemoveAll();
 	LevelLoader::LoadLevel(scene, 1);
@@ -34,6 +34,6 @@ void StartSinglePlayerCommand::Execute()
 	SceneSwapper::GetInstance().m_State = SceneSwapper::GameState::SinglePlayer;
 
 	//Start playing the in game music
-	dae::ServiceLocator::GetSoundSystem().PlayMusic("../Data/Sound/MainTheme.mp3", 100, -1);
-	dae::ServiceLocator::GetSoundSystem().ToggleMusic(true);
+	arche::ServiceLocator::GetSoundSystem().PlayMusic("../Data/Sound/MainTheme.mp3", 100, -1);
+	arche::ServiceLocator::GetSoundSystem().ToggleMusic(true);
 }

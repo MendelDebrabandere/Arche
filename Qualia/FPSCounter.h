@@ -1,12 +1,12 @@
 #pragma once
 #include "Component.h"
 
-namespace dae
+namespace arche
 {
 	class TextComponent;
 }
 
-class FPSCounter final : public dae::Component
+class FPSCounter final : public arche::Component
 {
 public:
 	FPSCounter() = default;
@@ -24,6 +24,6 @@ private:
 	const float m_UpdateInterval{ 1.f };
 	int m_FPS{};
 
-	dae::TextComponent* m_pText{};
+	arche::TextComponent* m_pText{};
 };
 

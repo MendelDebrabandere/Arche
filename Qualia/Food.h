@@ -6,6 +6,6 @@ class Food final
 {
 public:
 
-	static dae::GameObject* CreateFood(dae::Scene* pScene, const dae::GameObject* transformingObj, FoodComponent::FoodType type);
+	static arche::GameObject* CreateFood(arche::Scene* pScene, const arche::GameObject* transformingObj, FoodComponent::FoodType type);
 };
 

@@ -5,7 +5,7 @@
 #include "Renderer.h"
 #include "Transform.h"
 
-using namespace dae;
+using namespace arche;
 
 void TextureComponent::SetTexture(const std::shared_ptr<Texture2D>& pTexture)
 {

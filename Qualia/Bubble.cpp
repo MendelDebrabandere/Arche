@@ -6,7 +6,7 @@
 #include "SpriteComponent.h"
 #include "GameObject.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* Bubble::CreateBubble(Scene* pScene, const GameObject* pShooterObj)
 {

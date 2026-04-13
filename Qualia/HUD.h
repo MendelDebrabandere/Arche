@@ -7,5 +7,5 @@ class AvatarComponent;
 class HUD final
 {
 public:
-	static dae::GameObject* CreateHUD(dae::Scene* pScene, AvatarComponent* avatarComp, PlayerMaitaComponent* maitaComp = nullptr);
+	static arche::GameObject* CreateHUD(arche::Scene* pScene, AvatarComponent* avatarComp, PlayerMaitaComponent* maitaComp = nullptr);
 };

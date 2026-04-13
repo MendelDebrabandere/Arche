@@ -6,7 +6,7 @@ void ThrowRockCommand::Execute()
 {
 	PlayerMaitaComponent* maitaComp = m_pGo->GetComponent<PlayerMaitaComponent>();
 
-	float totalGameTime = dae::Time::GetInstance().GetTotal();
+	float totalGameTime = arche::Time::GetInstance().GetTotal();
 
 	//Attack cooldonw
 	if (maitaComp && totalGameTime - m_LastTimeThrew > 1.5f)

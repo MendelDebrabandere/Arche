@@ -5,7 +5,7 @@
 #include "Subject.h"
 #include "SpriteDataPreset.h"
 
-class AvatarComponent final : public dae::Component
+class AvatarComponent final : public arche::Component
 {
 public:
 	enum class AvatarState
@@ -38,8 +38,8 @@ public:
 
 	void PickedUpFood(FoodComponent::FoodType type);
 
-	dae::Subject<FoodComponent::FoodType> m_FoodPickup;
-	dae::Subject<int> m_HealthChange;
+	arche::Subject<FoodComponent::FoodType> m_FoodPickup;
+	arche::Subject<int> m_HealthChange;
 
 private:
 	void UpdateAnimVariablesMoving();
@@ -60,8 +60,8 @@ private:
 	AvatarColor m_MyColor{};
 
 	static float m_SpriteScale;
-	static dae::SpriteDataPreset m_GreenWalking;
-	static dae::SpriteDataPreset m_GreenDamaged;
-	static dae::SpriteDataPreset m_BlueWalking;
-	static dae::SpriteDataPreset m_BlueDamaged;
+	static arche::SpriteDataPreset m_GreenWalking;
+	static arche::SpriteDataPreset m_GreenDamaged;
+	static arche::SpriteDataPreset m_BlueWalking;
+	static arche::SpriteDataPreset m_BlueDamaged;
 };

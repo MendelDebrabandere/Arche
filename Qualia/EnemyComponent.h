@@ -1,7 +1,7 @@
 #pragma once
 #include "Component.h"
 
-class EnemyComponent final : public dae::Component
+class EnemyComponent final : public arche::Component
 {
 public:
 	EnemyComponent() = default;
@@ -37,5 +37,5 @@ private:
 
 	float m_ChangeWalkDirTimer{};
 
-	dae::Transform* m_pAvatarTransform{};
+	arche::Transform* m_pAvatarTransform{};
 };

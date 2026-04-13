@@ -2,10 +2,10 @@
 #include "Command.h"
 #include "GameObject.h"
 
-class MoveRightCommand final : public dae::Command
+class MoveRightCommand final : public arche::Command
 {
 public:
-	explicit MoveRightCommand(dae::GameObject* go, float speed)
+	explicit MoveRightCommand(arche::GameObject* go, float speed)
 		:m_pGo{ go }
 		, m_Speed{ speed }
 	{}
@@ -14,6 +14,6 @@ public:
 private:
 	void Move();
 
-	dae::GameObject* m_pGo{};
+	arche::GameObject* m_pGo{};
 	float m_Speed{};
 };

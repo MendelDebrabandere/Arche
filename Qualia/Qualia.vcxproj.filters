@@ -55,7 +55,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="BubbleBobble.cpp">
+    <ClCompile Include="Qualia.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="SceneSwapper.cpp">
@@ -162,7 +162,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BubbleBobble.h">
+    <ClInclude Include="Qualia.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="SceneSwapper.h">

@@ -1,7 +1,7 @@
 #pragma once
 #include "GameObject.h"
 
-namespace dae
+namespace arche
 {
 	class Scene final
 	{

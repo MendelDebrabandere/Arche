@@ -7,7 +7,7 @@
 #include "GameObject.h"
 #include "PhysicsComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* Food::CreateFood(Scene* pScene, const GameObject* transformingObj, FoodComponent::FoodType type)
 {

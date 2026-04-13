@@ -4,7 +4,7 @@
 #include "PhysicsComponent.h"
 #include "SpriteComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* Platform::CreatePlatform(Scene* pScene, const glm::vec2& spawnPos, int level)
 {

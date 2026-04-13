@@ -6,7 +6,7 @@
 #include "SceneManager.h"
 
 
-using namespace dae;
+using namespace arche;
 
 void ColliderComponent::FixedUpdate()
 {

@@ -15,7 +15,7 @@ void JumpCommand::Execute()
 	if (maitaComp && maitaComp->GetCurrState() != PlayerMaitaComponent::PlayerMaitaState::Moving)
 		return;
 	
-	auto physicsComp = m_pGo->GetComponent<dae::PhysicsComponent>();
+	auto physicsComp = m_pGo->GetComponent<arche::PhysicsComponent>();
 
 	if (physicsComp == nullptr)
 		return;
@@ -23,6 +23,6 @@ void JumpCommand::Execute()
 	if (physicsComp->GetCollisionState().BottomCollision)
 	{
 		physicsComp->Jump(m_Speed);
-		dae::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/JumpEffect.wav", 100, 0);
+		arche::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/JumpEffect.wav", 100, 0);
 	}
 }

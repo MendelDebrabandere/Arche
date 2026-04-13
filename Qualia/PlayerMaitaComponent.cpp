@@ -12,17 +12,17 @@
 #include "Timer.h"
 
 float PlayerMaitaComponent::m_SpriteScale{ 4 };
-dae::SpriteDataPreset PlayerMaitaComponent::m_Damaged{ false, 4, 8, 0.1f, 24, 28 };
-dae::SpriteDataPreset PlayerMaitaComponent::m_Walking{ false, 4, 8, 0.3f, 8, 13 };
-dae::SpriteDataPreset PlayerMaitaComponent::m_ThrowBoulder{ false, 4, 4, 0.2f, 7, 12 };
+arche::SpriteDataPreset PlayerMaitaComponent::m_Damaged{ false, 4, 8, 0.1f, 24, 28 };
+arche::SpriteDataPreset PlayerMaitaComponent::m_Walking{ false, 4, 8, 0.3f, 8, 13 };
+arche::SpriteDataPreset PlayerMaitaComponent::m_ThrowBoulder{ false, 4, 4, 0.2f, 7, 12 };
 
 void PlayerMaitaComponent::Initialize()
 {
 	//Set up enemy hit detection
-	dae::ColliderComponent* myColl = m_pOwner->GetComponent<dae::ColliderComponent>();
+	arche::ColliderComponent* myColl = m_pOwner->GetComponent<arche::ColliderComponent>();
 	if (myColl)
 	{
-		myColl->SetOverlapFunction([this](dae::GameObject* overlappingActor)
+		myColl->SetOverlapFunction([this](arche::GameObject* overlappingActor)
 			{
 				//if the player isnt invulnerable
 				if (m_Invulnerable == false && m_CurrentState == PlayerMaitaState::Moving)
@@ -34,8 +34,8 @@ void PlayerMaitaComponent::Initialize()
 						bubbleComp->Pop(false);
 						{
 							m_CurrentState = PlayerMaitaState::Hit;
-							dae::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/Damaged.wav", 100, 0);
-							dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+							arche::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/Damaged.wav", 100, 0);
+							arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 							if (spriteComp)
 							{
 								spriteComp->SetAnimVariables(m_Damaged);
@@ -61,7 +61,7 @@ void PlayerMaitaComponent::Update()
 	{
 		UpdateAnimVariablesMoving();
 
-		float elapsedSec = dae::Time::GetInstance().GetDelta();
+		float elapsedSec = arche::Time::GetInstance().GetDelta();
 
 		//If they are invulnerable, count down
 		if (m_Invulnerable)
@@ -75,7 +75,7 @@ void PlayerMaitaComponent::Update()
 			}
 		}
 
-		auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+		auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 		spriteComp->SetRenderOffset(glm::vec2{ 0, 0 });
 		if (m_Throwing)
 		{
@@ -84,7 +84,7 @@ void PlayerMaitaComponent::Update()
 
 			if (m_RockThrowingTimer >= 0.2f * 3.9f)
 			{
-				Rock::CreateRock(dae::SceneManager::GetInstance().GetActiveScene(), m_pOwner, m_pOwner->GetTransform()->GetFacingRight());
+				Rock::CreateRock(arche::SceneManager::GetInstance().GetActiveScene(), m_pOwner, m_pOwner->GetTransform()->GetFacingRight());
 				spriteComp->SetAnimVariables(m_Walking);
 				spriteComp->Scale(m_SpriteScale);
 				m_Throwing = false;
@@ -103,7 +103,7 @@ void PlayerMaitaComponent::Update()
 	{
 		DoRespawnLogic();
 
-		auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+		auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 		spriteComp->SetRenderOffset(glm::vec2(0, 0));
 		break;
 	}
@@ -114,7 +114,7 @@ void PlayerMaitaComponent::ThrowRock()
 {
 	if (m_CurrentState == PlayerMaitaState::Moving)
 	{
-		auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+		auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 		spriteComp->SetAnimVariables(m_ThrowBoulder);
 		m_RockThrowingTimer = 0.f;
 		spriteComp->Scale(m_SpriteScale);
@@ -130,11 +130,11 @@ PlayerMaitaComponent::PlayerMaitaState PlayerMaitaComponent::GetCurrState() cons
 
 void PlayerMaitaComponent::UpdateAnimVariablesMoving()
 {
-	dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (spriteComp)
 	{
 		//Check if the sprite should be paused or not depending on if it moved
-		dae::Transform* transform = m_pOwner->GetTransform();
+		arche::Transform* transform = m_pOwner->GetTransform();
 
 		glm::vec2 currPos = transform->GetLocalPosition();
 
@@ -168,13 +168,13 @@ void PlayerMaitaComponent::UpdateAnimVariablesMoving()
 
 void PlayerMaitaComponent::DoRespawnLogic()
 {
-	float elapsedSec = dae::Time::GetInstance().GetDelta();
+	float elapsedSec = arche::Time::GetInstance().GetDelta();
 	m_Timer += elapsedSec;
 
 	if (m_Timer >= m_MaxRespawmTimer)
 	{
 		//Respawn
-		dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+		arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 		if (spriteComp)
 		{
 			spriteComp->SetAnimVariables(m_Walking);

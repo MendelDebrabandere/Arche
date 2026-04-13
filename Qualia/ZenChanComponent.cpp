@@ -6,8 +6,8 @@
 #include "Timer.h"
 
 float ZenChanComponent::m_SpriteScale{ 4 };
-dae::SpriteDataPreset ZenChanComponent::m_WalkingPreset{ false, 4, 8, 0.3f, 0, 4 };
-dae::SpriteDataPreset ZenChanComponent::m_ChargingPreset{ false, 4, 8, 0.1f, 4, 8 };
+arche::SpriteDataPreset ZenChanComponent::m_WalkingPreset{ false, 4, 8, 0.3f, 0, 4 };
+arche::SpriteDataPreset ZenChanComponent::m_ChargingPreset{ false, 4, 8, 0.1f, 4, 8 };
 
 ZenChanComponent::ZenChanComponent()
 	: m_ChargingTimer{ static_cast<float>(rand() % 20 + 10) }
@@ -16,7 +16,7 @@ ZenChanComponent::ZenChanComponent()
 
 void ZenChanComponent::Initialize()
 {
-	dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (spriteComp)
 	{
 		spriteComp->SetAnimVariables(m_WalkingPreset);
@@ -26,7 +26,7 @@ void ZenChanComponent::Initialize()
 
 void ZenChanComponent::Update()
 {
-	float deltaTime = dae::Time::GetInstance().GetDelta();
+	float deltaTime = arche::Time::GetInstance().GetDelta();
 
 	auto enemyComp = m_pOwner->GetComponent<EnemyComponent>();
 	if (enemyComp == nullptr)
@@ -35,7 +35,7 @@ void ZenChanComponent::Update()
 
 	//Charging logic happens independent of state, it is outside of the switch
 	m_ChargingTimer -= deltaTime;
-	auto spriteComponent = m_pOwner->GetComponent<dae::SpriteComponent>();
+	auto spriteComponent = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (m_Charging)
 	{
 		enemyComp->MultiplyMoveSpeed(2.3f);

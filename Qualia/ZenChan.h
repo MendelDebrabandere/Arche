@@ -4,6 +4,6 @@
 class ZenChan final
 {
 public:
-	static dae::GameObject* CreateZenChan(dae::Scene* pScene, const glm::vec2& spawnPos);
+	static arche::GameObject* CreateZenChan(arche::Scene* pScene, const glm::vec2& spawnPos);
 };
 

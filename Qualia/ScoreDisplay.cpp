@@ -48,7 +48,7 @@ void ScoreDisplay::UpdateScoreText()
 	// Get text component if its not there
 	if (m_pText == nullptr)
 	{
-		m_pText = GetOwner()->GetComponent<dae::TextComponent>();
+		m_pText = GetOwner()->GetComponent<arche::TextComponent>();
 
 		if (m_pText == nullptr) return;
 	}

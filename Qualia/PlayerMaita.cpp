@@ -12,7 +12,7 @@
 #include "PlayerMaitaComponent.h"
 #include "ThrowRockCommand.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* PlayerMaita::CreateMaita(Scene* pScene, const glm::vec2& spawnPos)
 {

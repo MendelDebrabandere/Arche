@@ -3,8 +3,8 @@
 #include "Singleton.h"
 
 
-class SceneSwapper final : public dae::Singleton<SceneSwapper>,
-							public dae::EventListener
+class SceneSwapper final : public arche::Singleton<SceneSwapper>,
+							public arche::EventListener
 {
 public:
 	enum class GameState
@@ -24,7 +24,7 @@ public:
 	void Init();
 	void SkipLevel();
 
-	void OnEvent(const dae::Event& e) override;
+	void OnEvent(const arche::Event& e) override;
 
 	GameState m_State{ GameState::Menu };
 private:

@@ -8,9 +8,9 @@
 
 void ToggleSoundSysCommand::Execute()
 {
-	dae::SoundSystem& ss = dae::ServiceLocator::GetSoundSystem();
+	arche::SoundSystem& ss = arche::ServiceLocator::GetSoundSystem();
 
-	if (dynamic_cast<dae::SDLSoundSystem*>(&ss) != nullptr)
+	if (dynamic_cast<arche::SDLSoundSystem*>(&ss) != nullptr)
 	{
 		m_SoundIsOn = !m_SoundIsOn;
 

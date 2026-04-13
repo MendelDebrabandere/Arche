@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.h"
 
-class ToggleSoundSysCommand final : public dae::Command
+class ToggleSoundSysCommand final : public arche::Command
 {
 public:
 	ToggleSoundSysCommand() = default;

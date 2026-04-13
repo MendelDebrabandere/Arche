@@ -16,7 +16,7 @@
 #include "ToggleSoundSysCommand.h"
 #include "TextureComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 void MainMenuScene::Create()
 {

@@ -7,7 +7,7 @@
 #include "Timer.h"
 
 float RockComponent::m_SpriteScale{ 4 };
-dae::SpriteDataPreset RockComponent::m_CrashAnim{ false, 2, 4, 0.2f, 4, 7 };
+arche::SpriteDataPreset RockComponent::m_CrashAnim{ false, 2, 4, 0.2f, 4, 7 };
 
 void RockComponent::Initialize()
 {
@@ -17,8 +17,8 @@ void RockComponent::Initialize()
 
 void RockComponent::Update()
 {
-	float elapsedSec = dae::Time::GetInstance().GetDelta();
-	auto physComp = m_pOwner->GetComponent<dae::PhysicsComponent>();
+	float elapsedSec = arche::Time::GetInstance().GetDelta();
+	auto physComp = m_pOwner->GetComponent<arche::PhysicsComponent>();
 	auto collisionData = physComp->GetCollisionState();
 
 	switch (m_CurrState)
@@ -59,7 +59,7 @@ void RockComponent::SetMoveRight(bool right)
 void RockComponent::Crash()
 {
 	m_CurrState = RockState::Crashing;
-	auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	spriteComp->SetAnimVariables(m_CrashAnim);
 	spriteComp->Scale(m_SpriteScale);
 }

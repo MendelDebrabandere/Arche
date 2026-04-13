@@ -1,7 +1,7 @@
 #pragma once
 #include "SoundSystem.h"
 
-namespace dae
+namespace arche
 {
 	class NullSoundSystem final : public SoundSystem
 	{

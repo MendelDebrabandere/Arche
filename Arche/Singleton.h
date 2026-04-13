@@ -1,5 +1,5 @@
 #pragma once
-namespace dae
+namespace arche
 {
 	template <typename T>
 	class Singleton

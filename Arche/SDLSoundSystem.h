@@ -6,7 +6,7 @@
 
 #include "SoundSystem.h"
 
-namespace dae
+namespace arche
 {
 	class SDLSoundSystem final : public SoundSystem
 	{

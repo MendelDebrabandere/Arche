@@ -12,19 +12,19 @@
 
 
 float AvatarComponent::m_SpriteScale{ 4 };
-dae::SpriteDataPreset AvatarComponent::m_GreenWalking{ false, 6, 7, 0.1f, 0, 7 };
-dae::SpriteDataPreset AvatarComponent::m_GreenDamaged{ false, 6, 7, 0.1f, 14, 18 };
-dae::SpriteDataPreset AvatarComponent::m_BlueWalking{ false, 6, 7, 0.1f, 21, 28 };
-dae::SpriteDataPreset AvatarComponent::m_BlueDamaged{ false, 6, 7, 0.1f, 35, 39 };
+arche::SpriteDataPreset AvatarComponent::m_GreenWalking{ false, 6, 7, 0.1f, 0, 7 };
+arche::SpriteDataPreset AvatarComponent::m_GreenDamaged{ false, 6, 7, 0.1f, 14, 18 };
+arche::SpriteDataPreset AvatarComponent::m_BlueWalking{ false, 6, 7, 0.1f, 21, 28 };
+arche::SpriteDataPreset AvatarComponent::m_BlueDamaged{ false, 6, 7, 0.1f, 35, 39 };
 
 
 void AvatarComponent::Initialize()
 {
 	//Set up enemy hit detection
-	dae::ColliderComponent* myColl = m_pOwner->GetComponent<dae::ColliderComponent>();
+	arche::ColliderComponent* myColl = m_pOwner->GetComponent<arche::ColliderComponent>();
 	if (myColl)
 	{
-		myColl->SetOverlapFunction([this](dae::GameObject* overlappingActor)
+		myColl->SetOverlapFunction([this](arche::GameObject* overlappingActor)
 			{
 				//if the player isnt invulnerable
 				if (m_Invulnerable == false && m_CurrentState == AvatarState::Moving)
@@ -43,9 +43,9 @@ void AvatarComponent::Initialize()
 						}
 
 						m_CurrentState = AvatarState::Hit;
-						dae::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/Damaged.wav", 100, 0);
+						arche::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/Damaged.wav", 100, 0);
 
-						dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+						arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 						if (spriteComp)
 						{
 							if (m_MyColor == AvatarColor::green)
@@ -73,7 +73,7 @@ void AvatarComponent::Update()
 		//If they are invulnerable, count down
 		if (m_Invulnerable)
 		{
-			float elapsedSec = dae::Time::GetInstance().GetDelta();
+			float elapsedSec = arche::Time::GetInstance().GetDelta();
 			m_Timer += elapsedSec;
 
 			if (m_Timer >= m_MaxInvulnerableTime)
@@ -114,11 +114,11 @@ void AvatarComponent::PickedUpFood(FoodComponent::FoodType type)
 
 void AvatarComponent::UpdateAnimVariablesMoving()
 {
-	dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (spriteComp)
 	{
 		//Check if the sprite should be paused or not depending on if it moved
-		dae::Transform* transform = m_pOwner->GetTransform();
+		arche::Transform* transform = m_pOwner->GetTransform();
 
 		glm::vec2 currPos = transform->GetLocalPosition();
 
@@ -152,13 +152,13 @@ void AvatarComponent::UpdateAnimVariablesMoving()
 
 void AvatarComponent::DoRespawnLogic()
 {
-	float elapsedSec = dae::Time::GetInstance().GetDelta();
+	float elapsedSec = arche::Time::GetInstance().GetDelta();
 	m_Timer += elapsedSec;
 
 	if (m_Timer >= m_MaxRespawmTimer)
 	{
 		//Respawn
-		dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+		arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 		if (spriteComp)
 		{
 			if (m_MyColor == AvatarColor::green)

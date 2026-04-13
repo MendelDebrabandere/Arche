@@ -2,13 +2,13 @@
 #include "Component.h"
 #include "EventListener.h"
 
-namespace dae
+namespace arche
 {
 	class TextComponent;
 }
 
-class TypingKeyboardComponent final : public dae::Component,
-										public dae::EventListener
+class TypingKeyboardComponent final : public arche::Component,
+										public arche::EventListener
 {
 public:
 	TypingKeyboardComponent();
@@ -19,13 +19,13 @@ public:
 	TypingKeyboardComponent& operator=(const TypingKeyboardComponent& other) = delete;
 	TypingKeyboardComponent& operator=(TypingKeyboardComponent&& other) = delete;
 
-	void OnEvent(const dae::Event& event) override;
+	void OnEvent(const arche::Event& event) override;
 
 	const std::string& GetInput() const;
 
 private:
 	std::string m_TextString{};
 
-	dae::TextComponent* m_pText{};
+	arche::TextComponent* m_pText{};
 };
 

@@ -8,7 +8,7 @@
 #include "XBox360Controller.h"
 #include "Command.h"
 
-namespace dae
+namespace arche
 {
 
 	class InputManager final : public Singleton<InputManager>

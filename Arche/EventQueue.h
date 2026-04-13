@@ -7,7 +7,7 @@
 
 #include <queue>
 
-namespace dae
+namespace arche
 {
 	class EventQueue final : public Singleton<EventQueue>
 	{

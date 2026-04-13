@@ -19,20 +19,20 @@
 #include "ZenChanComponent.h"
 
 float BubbleComponent::m_SpriteScale{ 4 };
-dae::SpriteDataPreset BubbleComponent::m_GreenZenChan{ false, 9, 4, 0.3f, 0, 4 };
-dae::SpriteDataPreset BubbleComponent::m_BlueZenChan{ false, 9, 4, 0.3f, 4, 8 };
-dae::SpriteDataPreset BubbleComponent::m_GreenMaita{ false, 9, 4, 0.3f, 8, 12 };
-dae::SpriteDataPreset BubbleComponent::m_BlueMaita{ false, 9, 4, 0.3f, 12, 16 };
-dae::SpriteDataPreset BubbleComponent::m_Pop{ true, 9, 4, 0.15f, 24, 26 };
-dae::SpriteDataPreset BubbleComponent::m_DeadZenChan{ false, 9, 4, 0.1f, 28, 32 };
-dae::SpriteDataPreset BubbleComponent::m_DeadMaita{ false, 9, 4, 0.1f, 32, 36 };
+arche::SpriteDataPreset BubbleComponent::m_GreenZenChan{ false, 9, 4, 0.3f, 0, 4 };
+arche::SpriteDataPreset BubbleComponent::m_BlueZenChan{ false, 9, 4, 0.3f, 4, 8 };
+arche::SpriteDataPreset BubbleComponent::m_GreenMaita{ false, 9, 4, 0.3f, 8, 12 };
+arche::SpriteDataPreset BubbleComponent::m_BlueMaita{ false, 9, 4, 0.3f, 12, 16 };
+arche::SpriteDataPreset BubbleComponent::m_Pop{ true, 9, 4, 0.15f, 24, 26 };
+arche::SpriteDataPreset BubbleComponent::m_DeadZenChan{ false, 9, 4, 0.1f, 28, 32 };
+arche::SpriteDataPreset BubbleComponent::m_DeadMaita{ false, 9, 4, 0.1f, 32, 36 };
 
 void BubbleComponent::Initialize()
 {
-	dae::ColliderComponent* myColl = m_pOwner->GetComponent<dae::ColliderComponent>();
+	arche::ColliderComponent* myColl = m_pOwner->GetComponent<arche::ColliderComponent>();
 	if (myColl)
 	{
-		myColl->SetOverlapFunction([this](dae::GameObject* overlappingActor)
+		myColl->SetOverlapFunction([this](arche::GameObject* overlappingActor)
 			{
 				switch (m_CurrentState)
 				{
@@ -55,16 +55,16 @@ void BubbleComponent::Initialize()
 				{
 					//if its a player
 					AvatarComponent* avatarComp = overlappingActor->GetComponent<AvatarComponent>();
-					dae::ColliderComponent* playerColl = overlappingActor->GetComponent<dae::ColliderComponent>();
-					dae::ColliderComponent* myColl = m_pOwner->GetComponent<dae::ColliderComponent>();
+					arche::ColliderComponent* playerColl = overlappingActor->GetComponent<arche::ColliderComponent>();
+					arche::ColliderComponent* myColl = m_pOwner->GetComponent<arche::ColliderComponent>();
 					if (avatarComp && playerColl && myColl)
 					{
 						//if the player hits it from the top && the player is holding down spacebar
-						if (myColl->IsOverlappingWithDirectional(playerColl).first == dae::ColliderComponent::OverlapData::Top
-							&& dae::InputManager::GetInstance().IsKeyboardKeyDown('w'))
+						if (myColl->IsOverlappingWithDirectional(playerColl).first == arche::ColliderComponent::OverlapData::Top
+							&& arche::InputManager::GetInstance().IsKeyboardKeyDown('w'))
 						{
 							//set the physics to grounded so that the player can jump
-							dae::PhysicsComponent* playerPhysics = overlappingActor->GetComponent<dae::PhysicsComponent>(); \
+							arche::PhysicsComponent* playerPhysics = overlappingActor->GetComponent<arche::PhysicsComponent>(); \
 								playerPhysics->SetGrounded(true);
 						}
 						else
@@ -82,11 +82,11 @@ void BubbleComponent::Initialize()
 void BubbleComponent::Update()
 {
 	//increment timer
-	float deltaTime = dae::Time::GetInstance().GetDelta();
+	float deltaTime = arche::Time::GetInstance().GetDelta();
 	m_Timer += deltaTime;
 
 	//Get transform and position
-	dae::Transform* pTransform{ m_pOwner->GetTransform() };
+	arche::Transform* pTransform{ m_pOwner->GetTransform() };
 	const glm::vec2 currPos = pTransform->GetWorldPosition();
 
 	//Move object
@@ -138,10 +138,10 @@ void BubbleComponent::Update()
 			if (m_HasEnemyInside)
 			{
 				if (m_ZenChan)
-					ZenChan::CreateZenChan(dae::SceneManager::GetInstance().GetActiveScene(),
+					ZenChan::CreateZenChan(arche::SceneManager::GetInstance().GetActiveScene(),
 											m_pOwner->GetTransform()->GetWorldPosition());
 				else
-					Maita::CreateMaita(dae::SceneManager::GetInstance().GetActiveScene(),
+					Maita::CreateMaita(arche::SceneManager::GetInstance().GetActiveScene(),
 										m_pOwner->GetTransform()->GetWorldPosition());
 			}
 
@@ -151,7 +151,7 @@ void BubbleComponent::Update()
 	}
 	case BubbleState::Popping:
 	{
-		auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+		auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 		if (spriteComp)
 			if (spriteComp->IsDoingOnce() == false) //the do once explosion ended
 				m_pOwner->Destroy();
@@ -163,7 +163,7 @@ void BubbleComponent::Update()
 		if (abs(currPos.x - m_RandomGoToPos.x) <= 1.f && abs(currPos.y - m_RandomGoToPos.y) <= 1.f)
 		{
 			//spawn a food
-			auto scene = dae::SceneManager::GetInstance().GetActiveScene();
+			auto scene = arche::SceneManager::GetInstance().GetActiveScene();
 			if (m_ZenChan)
 				Food::CreateFood(scene, m_pOwner, FoodComponent::FoodType::Melon);
 			else
@@ -202,14 +202,14 @@ bool BubbleComponent::HasEnemyInside() const
 	return m_HasEnemyInside;
 }
 
-void BubbleComponent::PickUpEnemy(dae::GameObject* go)
+void BubbleComponent::PickUpEnemy(arche::GameObject* go)
 {
 	m_HasEnemyInside = true;
 
 	m_ZenChan = go->GetComponent<ZenChanComponent>();
 
 	go->Destroy();
-	dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (spriteComp)
 	{
 		if (m_Blue)
@@ -232,11 +232,11 @@ void BubbleComponent::PickUpEnemy(dae::GameObject* go)
 
 void BubbleComponent::Pop(bool byPlayer)
 {
-	auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (m_HasEnemyInside && byPlayer)
 	{
 		m_CurrentState = BubbleState::EnemyDying;
-		dae::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/PopBubbleWithEnemy.wav", 100, 0);
+		arche::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/PopBubbleWithEnemy.wav", 100, 0);
 
 		//Make death sprite animation
 		if (spriteComp)

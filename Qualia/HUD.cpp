@@ -7,7 +7,7 @@
 #include "ScoreDisplay.h"
 #include "TextComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* HUD::CreateHUD(Scene* pScene , AvatarComponent* avatarComp, PlayerMaitaComponent* maitaComp )
 {

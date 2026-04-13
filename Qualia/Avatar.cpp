@@ -10,7 +10,7 @@
 #include "ShootBubbleCommand.h"
 #include "SpriteComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* Avatar::CreateAvatar(Scene* pScene, const glm::vec2& spawnPos, bool green, bool coop)
 {

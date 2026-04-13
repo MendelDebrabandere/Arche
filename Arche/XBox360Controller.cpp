@@ -5,7 +5,7 @@
 
 #include "XBox360Controller.h"
 
-using namespace dae;
+using namespace arche;
 
 class XBox360Controller::XBox360ControllerImpl final
 {

@@ -7,15 +7,15 @@
 
 TypingKeyboardComponent::TypingKeyboardComponent()
 {
-	dae::EventQueue::GetInstance().AddListener(this);
+	arche::EventQueue::GetInstance().AddListener(this);
 }
 
 TypingKeyboardComponent::~TypingKeyboardComponent()
 {
-	dae::EventQueue::GetInstance().RemoveListener(GetId());
+	arche::EventQueue::GetInstance().RemoveListener(GetId());
 }
 
-void TypingKeyboardComponent::OnEvent(const dae::Event& event)
+void TypingKeyboardComponent::OnEvent(const arche::Event& event)
 {
 	//if the length is one that means it is an input from the inputmanager
 	if (event.name.length() == 1)
@@ -38,7 +38,7 @@ void TypingKeyboardComponent::OnEvent(const dae::Event& event)
 		// Get text component if its not there
 		if (m_pText == nullptr)
 		{
-			m_pText = GetOwner()->GetComponent<dae::TextComponent>();
+			m_pText = GetOwner()->GetComponent<arche::TextComponent>();
 
 			if (m_pText == nullptr) return;
 		}

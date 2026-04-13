@@ -5,7 +5,7 @@
 #include "Subject.h"
 #include "SpriteDataPreset.h"
 
-class PlayerMaitaComponent final : public dae::Component
+class PlayerMaitaComponent final : public arche::Component
 {
 public:
 	enum class PlayerMaitaState
@@ -29,7 +29,7 @@ public:
 
 	PlayerMaitaState GetCurrState() const;
 
-	dae::Subject<int> m_HealthChange;
+	arche::Subject<int> m_HealthChange;
 
 private:
 	void UpdateAnimVariablesMoving();
@@ -52,9 +52,9 @@ private:
 
 
 	static float m_SpriteScale;
-	static dae::SpriteDataPreset m_Damaged;
-	static dae::SpriteDataPreset m_Walking;
-	static dae::SpriteDataPreset m_ThrowBoulder;
+	static arche::SpriteDataPreset m_Damaged;
+	static arche::SpriteDataPreset m_Walking;
+	static arche::SpriteDataPreset m_ThrowBoulder;
 };
 
 

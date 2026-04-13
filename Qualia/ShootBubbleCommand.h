@@ -2,14 +2,14 @@
 #include "Command.h"
 #include "GameObject.h"
 
-class ShootBubbleCommand final : public dae::Command
+class ShootBubbleCommand final : public arche::Command
 {
 public:
-	explicit ShootBubbleCommand(dae::GameObject* go)
+	explicit ShootBubbleCommand(arche::GameObject* go)
 		: m_pGo{ go }
 	{}
 
 	void Execute() override;
 private:
-	dae::GameObject* m_pGo{};
+	arche::GameObject* m_pGo{};
 };

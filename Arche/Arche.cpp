@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
-#include "Minigin.h"
+#include "Arche.h"
 
 #include <chrono>
 
@@ -15,7 +15,7 @@
 #include "ResourceManager.h"
 #include "Timer.h"
 
-using namespace dae;
+using namespace arche;
 
 SDL_Window* g_window{};
 
@@ -47,7 +47,7 @@ void PrintSDLVersion()
 		version.major, version.minor, version.patch);
 }
 
-Minigin::Minigin(const std::string &dataPath)
+Arche::Arche(const std::string &dataPath)
 {
 	PrintSDLVersion();
 	
@@ -81,7 +81,7 @@ Minigin::Minigin(const std::string &dataPath)
 	mpSceneManager = &SceneManager::GetInstance();
 }
 
-Minigin::~Minigin()
+Arche::~Arche()
 {
 	Renderer::GetInstance().Destroy();
 	SDL_DestroyWindow(g_window);
@@ -89,12 +89,12 @@ Minigin::~Minigin()
 	SDL_Quit();
 }
 
-SceneManager* Minigin::GetSceneManager() const
+SceneManager* Arche::GetSceneManager() const
 {
 	return mpSceneManager;
 }
 
-void Minigin::Run()
+void Arche::Run()
 {
 	auto& renderer = Renderer::GetInstance();
 	auto& sceneManager = SceneManager::GetInstance();

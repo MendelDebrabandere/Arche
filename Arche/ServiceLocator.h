@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 
-namespace dae
+namespace arche
 {
 	class SoundSystem;
 

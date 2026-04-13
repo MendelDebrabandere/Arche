@@ -17,7 +17,7 @@ void EnemyComponent::Initialize()
 	m_ChangeWalkDirTimer = static_cast<float>(rand() % 2 + 3);
 
 	// init avatar transform
-	auto& allObjects = dae::SceneManager::GetInstance().GetActiveScene()->GetAllObjects();
+	auto& allObjects = arche::SceneManager::GetInstance().GetActiveScene()->GetAllObjects();
 	for (auto& obj : allObjects)
 	{
 		if (obj->GetComponent<AvatarComponent>())
@@ -35,12 +35,12 @@ void EnemyComponent::Update()
 	}
 
 	//get data variables
-	dae::Transform* transform = m_pOwner->GetTransform();
+	arche::Transform* transform = m_pOwner->GetTransform();
 	glm::vec2 myPos = transform->GetWorldPosition();
 	glm::vec2 avatarPos = m_pAvatarTransform->GetWorldPosition(); 
 	glm::vec2 releativeAvatarPos{ avatarPos - myPos };
-	dae::PhysicsComponent* physComp = m_pOwner->GetComponent< dae::PhysicsComponent>();
-	float deltaTime = dae::Time::GetInstance().GetDelta();
+	arche::PhysicsComponent* physComp = m_pOwner->GetComponent< arche::PhysicsComponent>();
+	float deltaTime = arche::Time::GetInstance().GetDelta();
 
 	glm::vec2 moveDelta{};
 
@@ -126,7 +126,7 @@ void EnemyComponent::Update()
 
 	transform->Translate(moveDelta);
 
-	auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (spriteComp)
 		spriteComp->FlipTexture(m_WalkingRight);
 

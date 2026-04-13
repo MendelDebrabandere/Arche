@@ -1,6 +1,6 @@
 #pragma once
 
-class BubbleBobble final
+class Qualia final
 {
 public:
 	static void Create();

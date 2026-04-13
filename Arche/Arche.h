@@ -4,20 +4,20 @@
 #include <queue>
 #include <string>
 
-namespace dae
+namespace arche
 {
 	class SceneManager;
 
-	class Minigin final
+	class Arche final
 	{
 	public:
-		explicit Minigin(const std::string& dataPath);
-		~Minigin();
+		explicit Arche(const std::string& dataPath);
+		~Arche();
 
-		Minigin(const Minigin& other) = delete;
-		Minigin(Minigin&& other) = delete;
-		Minigin& operator=(const Minigin& other) = delete;
-		Minigin& operator=(Minigin&& other) = delete;
+		Arche(const Arche& other) = delete;
+		Arche(Arche&& other) = delete;
+		Arche& operator=(const Arche& other) = delete;
+		Arche& operator=(Arche&& other) = delete;
 
 		SceneManager* GetSceneManager() const;
 

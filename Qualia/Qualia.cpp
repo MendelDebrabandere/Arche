@@ -1,13 +1,13 @@
-#include "BubbleBobble.h"
+#include "Qualia.h"
 
 #include <ctime>
 #include <iostream>
 
 #include "SceneSwapper.h"
 
-using namespace dae;
+using namespace arche;
 
-void BubbleBobble::Create()
+void Qualia::Create()
 {
 	//ServiceLocator::RegisterSoundSystem(new NullSoundSystem());
 

@@ -2,14 +2,14 @@
 #include "FoodComponent.h"
 #include "Subject.h"
 
-namespace dae
+namespace arche
 {
 	class TextComponent;
 }
 
 class AvatarComponent;
 
-class HealthDisplay final : public dae::Component, public dae::Observer<int>
+class HealthDisplay final : public arche::Component, public arche::Observer<int>
 {
 public:
 	HealthDisplay() = default;
@@ -21,7 +21,7 @@ public:
 	HealthDisplay& operator=(HealthDisplay&& other) = delete;
 
 	void Initialize() override;
-	void SetSubject(dae::Subject<int>* healthSubj);
+	void SetSubject(arche::Subject<int>* healthSubj);
 
 	int GetHP() const;
 
@@ -32,8 +32,8 @@ private:
 	void UpdateText();
 
 	int m_HP{};
-	dae::Subject<int>* m_pSubject{};
+	arche::Subject<int>* m_pSubject{};
 
-	dae::TextComponent* m_pText{};
+	arche::TextComponent* m_pText{};
 };
 

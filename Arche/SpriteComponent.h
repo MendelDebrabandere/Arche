@@ -8,7 +8,7 @@
 #include "Component.h"
 #include "SpriteDataPreset.h"
 
-namespace dae
+namespace arche
 {
 	class SpriteComponent final : public Component
 	{

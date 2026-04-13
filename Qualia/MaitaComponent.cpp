@@ -8,8 +8,8 @@
 #include "Timer.h"
 
 float MaitaComponent::m_SpriteScale{4};
-dae::SpriteDataPreset MaitaComponent::m_WalkingPreset{false, 4, 8, 0.3f, 8, 13};
-dae::SpriteDataPreset MaitaComponent::m_AttackingPreset{false, 4, 4, 0.2f, 7, 12};
+arche::SpriteDataPreset MaitaComponent::m_WalkingPreset{false, 4, 8, 0.3f, 8, 13};
+arche::SpriteDataPreset MaitaComponent::m_AttackingPreset{false, 4, 4, 0.2f, 7, 12};
 
 MaitaComponent::MaitaComponent()
 	: m_RockThrowingTimer{ static_cast<float>(rand() % 3 + 5) }
@@ -18,7 +18,7 @@ MaitaComponent::MaitaComponent()
 
 void MaitaComponent::Initialize()
 {
-	dae::SpriteComponent* spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	arche::SpriteComponent* spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 	if (spriteComp)
 	{
 		spriteComp->SetAnimVariables(m_WalkingPreset);
@@ -28,9 +28,9 @@ void MaitaComponent::Initialize()
 
 void MaitaComponent::Update()
 {
-	m_RockThrowingTimer -= dae::Time::GetInstance().GetDelta();
+	m_RockThrowingTimer -= arche::Time::GetInstance().GetDelta();
 
-	auto spriteComp = m_pOwner->GetComponent<dae::SpriteComponent>();
+	auto spriteComp = m_pOwner->GetComponent<arche::SpriteComponent>();
 
 	if (m_RockThrowingTimer < 0.f && spriteComp)
 	{
@@ -41,7 +41,7 @@ void MaitaComponent::Update()
 		}
 		else
 		{
-			Rock::CreateRock(dae::SceneManager::GetInstance().GetActiveScene(), m_pOwner, m_pOwner->GetComponent<EnemyComponent>()->GetMoveRight());
+			Rock::CreateRock(arche::SceneManager::GetInstance().GetActiveScene(), m_pOwner, m_pOwner->GetComponent<EnemyComponent>()->GetMoveRight());
 			spriteComp->SetAnimVariables(m_WalkingPreset);
 			m_RockThrowingTimer = static_cast<float>(rand() % 3 + 5);
 		}

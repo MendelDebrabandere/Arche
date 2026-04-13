@@ -5,7 +5,7 @@
 #include "SceneManager.h"
 #include "Timer.h"
 
-using namespace dae;
+using namespace arche;
 
 void PhysicsComponent::FixedUpdate()
 {

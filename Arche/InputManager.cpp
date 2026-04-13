@@ -4,9 +4,8 @@
 #include <iostream>
 #include <sstream>
 #include "EventQueue.h"
-#include "Minigin.h"
 
-using namespace dae;
+using namespace arche;
 
 bool InputManager::ProcessInput()
 {

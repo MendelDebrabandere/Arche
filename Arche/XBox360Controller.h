@@ -1,7 +1,7 @@
 #pragma once
 #include <glm/vec2.hpp>
 
-namespace dae
+namespace arche
 {
 	class XBox360Controller final
 	{

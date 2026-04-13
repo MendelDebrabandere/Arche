@@ -5,20 +5,20 @@
 #endif
 #endif
 
-#include "BubbleBobble.h"
-#include "Minigin.h"
+#include "Qualia.h"
+#include "Arche.h"
 #include "SDLSoundSystem.h"
 #include "ServiceLocator.h"
 
-using namespace dae;
+using namespace arche;
 
 int main(int, char* [])
 {
 	// Register the soundSystem
 	ServiceLocator::InitDefault();
 
-	Minigin engine{ std::string("../Data/") };
-	BubbleBobble::Create();
+	Arche engine{ std::string("../Data/") };
+	Qualia::Create();
 	engine.Run();
 
 	return 0;

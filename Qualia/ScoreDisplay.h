@@ -2,14 +2,14 @@
 #include "FoodComponent.h"
 #include "Subject.h"
 
-namespace dae
+namespace arche
 {
 	class TextComponent;
 }
 
 class AvatarComponent;
 
-class ScoreDisplay final : public dae::Component, public dae::Observer<FoodComponent::FoodType>
+class ScoreDisplay final : public arche::Component, public arche::Observer<FoodComponent::FoodType>
 {
 public:
 	ScoreDisplay() = default;
@@ -34,6 +34,6 @@ private:
 	int m_score{};
 	AvatarComponent* m_Player{};
 
-	dae::TextComponent* m_pText{};
+	arche::TextComponent* m_pText{};
 };
 

@@ -6,7 +6,7 @@
 #include "SpriteComponent.h"
 #include "ZenChanComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* ZenChan::CreateZenChan(Scene* pScene, const glm::vec2& spawnPos)
 {

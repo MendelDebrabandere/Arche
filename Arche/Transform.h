@@ -2,7 +2,7 @@
 #include <glm/glm.hpp>
 #include "Component.h"
 
-namespace dae
+namespace arche
 {
 	class Transform final : public Component
 	{

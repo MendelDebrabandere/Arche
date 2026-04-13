@@ -1,6 +1,6 @@
 #include "Timer.h"
 
-using namespace dae;
+using namespace arche;
 
 void Time::Init()
 {

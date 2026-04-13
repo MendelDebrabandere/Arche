@@ -6,7 +6,7 @@
 #include "Texture2D.h"
 #include "Font.h"
 
-using namespace dae;
+using namespace arche;
 
 void ResourceManager::Init(const std::string& dataPath)
 {

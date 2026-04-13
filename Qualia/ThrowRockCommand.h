@@ -3,18 +3,18 @@
 #include "GameObject.h"
 #include "Timer.h"
 
-class ThrowRockCommand final : public dae::Command
+class ThrowRockCommand final : public arche::Command
 {
 public:
-	explicit ThrowRockCommand(dae::GameObject* go)
+	explicit ThrowRockCommand(arche::GameObject* go)
 		: m_pGo{ go }
 	{
-		m_LastTimeThrew = dae::Time::GetInstance().GetTotal();
+		m_LastTimeThrew = arche::Time::GetInstance().GetTotal();
 	}
 
 	void Execute() override;
 private:
-	dae::GameObject* m_pGo{};
+	arche::GameObject* m_pGo{};
 
 	float m_LastTimeThrew;
 };

@@ -5,7 +5,7 @@
 
 #include "Transform.h"
 
-namespace dae
+namespace arche
 {
 	class Texture2D;
 	class Component;
@@ -68,7 +68,7 @@ namespace dae
 
 
 	template<class T>
-	inline T* dae::GameObject::AddComponent()
+	inline T* arche::GameObject::AddComponent()
 	{
 		static_assert(std::is_base_of<Component, T>(), "T needs to be derived from the Component class");
 
@@ -106,7 +106,7 @@ namespace dae
 	}
 
 	template<class T>
-	inline T* dae::GameObject::GetComponent() const
+	inline T* arche::GameObject::GetComponent() const
 	{
 		static_assert(std::is_base_of<Component, T>(), "T needs to be derived from the Component class");
 
@@ -120,7 +120,7 @@ namespace dae
 	}
 
 	template <class T>
-	inline bool dae::GameObject::HasComponent() const
+	inline bool arche::GameObject::HasComponent() const
 	{
 		static_assert(std::is_base_of<Component, T>(), "T needs to be derived from the Component class");
 

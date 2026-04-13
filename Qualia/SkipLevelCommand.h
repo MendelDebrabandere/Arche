@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.h"
 
-class SkipLevelCommand final : public dae::Command
+class SkipLevelCommand final : public arche::Command
 {
 public:
 	explicit SkipLevelCommand()

@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.h"
 
-class StartSinglePlayerCommand final : public dae::Command
+class StartSinglePlayerCommand final : public arche::Command
 {
 public:
 	StartSinglePlayerCommand() = default;

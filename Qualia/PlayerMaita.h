@@ -4,6 +4,6 @@
 class PlayerMaita final
 {
 public:
-	static dae::GameObject* CreateMaita(dae::Scene* pScene, const glm::vec2& spawnPos);
+	static arche::GameObject* CreateMaita(arche::Scene* pScene, const glm::vec2& spawnPos);
 };
 

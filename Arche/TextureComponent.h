@@ -4,7 +4,7 @@
 
 #include "Component.h"
 
-namespace dae
+namespace arche
 {
 	class Texture2D;
 

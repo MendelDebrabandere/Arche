@@ -2,7 +2,7 @@
 #include "Component.h"
 #include "SpriteDataPreset.h"
 
-class ZenChanComponent final : public dae::Component
+class ZenChanComponent final : public arche::Component
 {
 public:
 	ZenChanComponent();
@@ -21,6 +21,6 @@ private:
 	float m_ChargingTimer{};
 
 	static float m_SpriteScale;
-	static dae::SpriteDataPreset m_WalkingPreset;
-	static dae::SpriteDataPreset m_ChargingPreset;
+	static arche::SpriteDataPreset m_WalkingPreset;
+	static arche::SpriteDataPreset m_ChargingPreset;
 };

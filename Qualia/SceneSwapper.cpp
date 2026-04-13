@@ -13,7 +13,7 @@
 #include "ServiceLocator.h"
 #include "SoundSystem.h"
 
-using namespace dae;
+using namespace arche;
 
 
 
@@ -37,7 +37,7 @@ void SceneSwapper::SkipLevel()
 
 		//Remove everything that doesnt have the avatar component
 		auto& objVec = pGameScene->GetAllObjects();
-		objVec.erase(std::remove_if(objVec.begin(), objVec.end(), [](std::unique_ptr<dae::GameObject>& go) {
+		objVec.erase(std::remove_if(objVec.begin(), objVec.end(), [](std::unique_ptr<arche::GameObject>& go) {
 			return (go->GetComponent<AvatarComponent>() == nullptr &&
 				go->GetComponent<ScoreDisplay>() == nullptr &&
 				go->GetComponent<HealthDisplay>() == nullptr);
@@ -65,12 +65,12 @@ void SceneSwapper::SkipLevel()
 	}
 }
 
-void SceneSwapper::OnEvent(const dae::Event& e)
+void SceneSwapper::OnEvent(const arche::Event& e)
 {
 	//PLAYER DIED
 	if (e.name ==  "PlayerDied")
 	{
-		dae::ServiceLocator::GetSoundSystem().ToggleMusic(false);
+		arche::ServiceLocator::GetSoundSystem().ToggleMusic(false);
 		
 		MainMenuScene::Create();
 		m_State = GameState::Menu;
@@ -85,7 +85,7 @@ void SceneSwapper::OnEvent(const dae::Event& e)
 		{
 			bool canChangeLevel{ true };
 			//Check if it should change the scene to next level
-			for (auto& object : dae::SceneManager::GetInstance().GetActiveScene()->GetAllObjects())
+			for (auto& object : arche::SceneManager::GetInstance().GetActiveScene()->GetAllObjects())
 			{
 				//dont change when there are still enemies
 				if (object->HasComponent<EnemyComponent>())

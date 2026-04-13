@@ -7,7 +7,7 @@
 #include "PhysicsComponent.h"
 #include "RockComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* Rock::CreateRock(Scene* pScene, const GameObject* transformingObj, bool rightDir)
 {

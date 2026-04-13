@@ -1,7 +1,7 @@
 #include "SceneManager.h"
 #include "Scene.h"
 
-using namespace dae;
+using namespace arche;
 
 Scene* SceneManager::CreateScene(const std::string& name)
 {

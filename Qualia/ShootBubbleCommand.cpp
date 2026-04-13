@@ -11,7 +11,7 @@
 void ShootBubbleCommand::Execute()
 {
 	AvatarComponent* avatarComp = m_pGo->GetComponent<AvatarComponent>();
-	dae::SpriteComponent* spriteComp = m_pGo->GetComponent<dae::SpriteComponent>();
+	arche::SpriteComponent* spriteComp = m_pGo->GetComponent<arche::SpriteComponent>();
 
 	if (avatarComp && spriteComp)
 	{
@@ -21,9 +21,9 @@ void ShootBubbleCommand::Execute()
 
 		if (avatarComp->GetCurrState() == AvatarComponent::AvatarState::Moving)
 		{
-			dae::Scene* scene = dae::SceneManager::GetInstance().GetActiveScene();
+			arche::Scene* scene = arche::SceneManager::GetInstance().GetActiveScene();
 			Bubble::CreateBubble(scene, m_pGo);\
-			dae::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/ShootBubbleEffect.wav", 100, 0);
+			arche::ServiceLocator::GetSoundSystem().PlaySound("../Data/Sound/ShootBubbleEffect.wav", 100, 0);
 
 
 			if (avatarComp->GetColor() == AvatarComponent::AvatarColor::green)

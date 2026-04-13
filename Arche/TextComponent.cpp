@@ -7,25 +7,25 @@
 #include "TextureComponent.h"
 #include "Texture2D.h"
 
-void dae::TextComponent::SetFont(std::shared_ptr<Font> pFont)
+void arche::TextComponent::SetFont(std::shared_ptr<Font> pFont)
 {
 	m_pFont = pFont;
 	m_HasChanged = true;
 }
 
-void dae::TextComponent::SetText(const std::string& text)
+void arche::TextComponent::SetText(const std::string& text)
 {
 	m_Text = text;
 	m_HasChanged = true;
 }
 
-void dae::TextComponent::SetColor(unsigned char r, unsigned char g, unsigned char b)
+void arche::TextComponent::SetColor(unsigned char r, unsigned char g, unsigned char b)
 {
 	m_Color = SDL_Color{ r, g, b, 255 };
 	m_HasChanged = true;
 }
 
-void dae::TextComponent::Update()
+void arche::TextComponent::Update()
 {
 	if (!m_HasChanged) return;
 
@@ -34,7 +34,7 @@ void dae::TextComponent::Update()
 	m_HasChanged = false;
 }
 
-void dae::TextComponent::ReloadTexture()
+void arche::TextComponent::ReloadTexture()
 {
 	if (!m_pFont) return;
 

@@ -2,7 +2,7 @@
 #include <chrono>
 #include "Singleton.h"
 
-namespace dae
+namespace arche
 {
 	class Time final : public Singleton<Time>
 	{

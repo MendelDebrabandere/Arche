@@ -5,7 +5,7 @@
 
 #include "Component.h"
 
-namespace dae
+namespace arche
 {
 	class ColliderComponent final : public Component
 	{

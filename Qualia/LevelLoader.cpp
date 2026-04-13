@@ -17,7 +17,7 @@
 #include "SkipLevelCommand.h"
 #include "ZenChan.h"
 
-using namespace dae;
+using namespace arche;
 
 void LevelLoader::LoadLevel(Scene* pScene, int number)
 {

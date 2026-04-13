@@ -2,16 +2,16 @@
 #include "Command.h"
 #include "GameObject.h"
 
-class JumpCommand final : public dae::Command
+class JumpCommand final : public arche::Command
 {
 public:
-	explicit JumpCommand(dae::GameObject* go, float speed)
+	explicit JumpCommand(arche::GameObject* go, float speed)
 		:m_pGo{ go }
 		, m_Speed{ speed }
 	{}
 
 	void Execute() override;
 private:
-	dae::GameObject* m_pGo{};
+	arche::GameObject* m_pGo{};
 	float m_Speed{};
 };

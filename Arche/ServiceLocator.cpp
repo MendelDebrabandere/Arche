@@ -3,7 +3,7 @@
 #include "SDLSoundSystem.h"
 #include "SoundSystem.h"
 
-using namespace dae;
+using namespace arche;
 
 std::unique_ptr<SoundSystem> ServiceLocator::m_SSInstance = nullptr;
 

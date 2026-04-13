@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.h"
 
-class StartVersusCommand final : public dae::Command
+class StartVersusCommand final : public arche::Command
 {
 public:
 	StartVersusCommand() = default;

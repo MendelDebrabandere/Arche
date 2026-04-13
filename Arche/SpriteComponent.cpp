@@ -5,7 +5,7 @@
 #include "Timer.h"
 #include <glm/vec2.hpp>
 
-using namespace dae;
+using namespace arche;
 
 void SpriteComponent::Update()
 {

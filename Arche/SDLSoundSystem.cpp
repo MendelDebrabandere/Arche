@@ -8,7 +8,7 @@
 #include <mutex>
 #include <condition_variable>
 
-using namespace dae;
+using namespace arche;
 
 class SDLSoundSystem::SDL_MixerImpl final
 {

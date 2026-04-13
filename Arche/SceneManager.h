@@ -5,7 +5,7 @@
 #include <memory>
 #include "Singleton.h"
 
-namespace dae
+namespace arche
 {
 	class Scene;
 	class SceneManager final : public Singleton<SceneManager>

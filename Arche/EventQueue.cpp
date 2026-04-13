@@ -1,6 +1,6 @@
 #include "EventQueue.h"
 
-using namespace dae;
+using namespace arche;
 
 void EventQueue::SendEvent(const Event& event)
 {

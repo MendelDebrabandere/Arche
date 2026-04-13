@@ -5,7 +5,7 @@
 
 #include "Singleton.h"
 
-namespace dae
+namespace arche
 {
 	class Texture2D;
 	class Font;

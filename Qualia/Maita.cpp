@@ -8,7 +8,7 @@
 #include "SpriteComponent.h"
 #include "MaitaComponent.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject* Maita::CreateMaita(Scene* pScene, const glm::vec2& spawnPos)
 {

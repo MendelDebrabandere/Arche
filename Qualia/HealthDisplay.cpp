@@ -13,7 +13,7 @@ void HealthDisplay::Initialize()
 	UpdateText();
 }
 
-void HealthDisplay::SetSubject(dae::Subject<int>* healthSubj)
+void HealthDisplay::SetSubject(arche::Subject<int>* healthSubj)
 {
 	m_pSubject = healthSubj;
 	if (m_pSubject)
@@ -32,7 +32,7 @@ void HealthDisplay::HandleEvent(int healthDelta)
 	m_HP += healthDelta;
 
 	if (m_HP < 0)
- 		dae::EventQueue::GetInstance().SendEvent(dae::Event{ "PlayerDied" });
+ 		arche::EventQueue::GetInstance().SendEvent(arche::Event{ "PlayerDied" });
 	else
 		UpdateText();
 }
@@ -48,7 +48,7 @@ void HealthDisplay::UpdateText()
 	// Get text component if its not there
 	if (m_pText == nullptr)
 	{
-		m_pText = GetOwner()->GetComponent<dae::TextComponent>();
+		m_pText = GetOwner()->GetComponent<arche::TextComponent>();
 
 		if (m_pText == nullptr) return;
 	}

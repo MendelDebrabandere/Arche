@@ -4,7 +4,7 @@
 #include "Component.h"
 #include "SpriteDataPreset.h"
 
-class BubbleComponent final : public dae::Component
+class BubbleComponent final : public arche::Component
 {
 public:
 	enum class BubbleState
@@ -38,7 +38,7 @@ public:
 private:
 	BubbleState m_CurrentState{ BubbleState::Shooting };
 
-	void PickUpEnemy(dae::GameObject* go);
+	void PickUpEnemy(arche::GameObject* go);
 
 	float m_Timer{};
 	bool m_DirectionRight{};
@@ -54,13 +54,13 @@ private:
 	bool m_Blue{ false };
 
 	static float m_SpriteScale;
-	static dae::SpriteDataPreset m_GreenZenChan;
-	static dae::SpriteDataPreset m_BlueZenChan;
-	static dae::SpriteDataPreset m_GreenMaita;
-	static dae::SpriteDataPreset m_BlueMaita;
-	static dae::SpriteDataPreset m_GreenHover;
-	static dae::SpriteDataPreset m_BlueHover;
-	static dae::SpriteDataPreset m_Pop;
-	static dae::SpriteDataPreset m_DeadZenChan;
-	static dae::SpriteDataPreset m_DeadMaita;
+	static arche::SpriteDataPreset m_GreenZenChan;
+	static arche::SpriteDataPreset m_BlueZenChan;
+	static arche::SpriteDataPreset m_GreenMaita;
+	static arche::SpriteDataPreset m_BlueMaita;
+	static arche::SpriteDataPreset m_GreenHover;
+	static arche::SpriteDataPreset m_BlueHover;
+	static arche::SpriteDataPreset m_Pop;
+	static arche::SpriteDataPreset m_DeadZenChan;
+	static arche::SpriteDataPreset m_DeadMaita;
 };

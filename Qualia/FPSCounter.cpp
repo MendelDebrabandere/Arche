@@ -10,7 +10,7 @@ void FPSCounter::Update()
 	++m_AmountOfPassedFrames;
 
 	// Every updateInterval, update the text to the average FPS of the interval
-	m_AccuSec += dae::Time::GetInstance().GetDelta();
+	m_AccuSec += arche::Time::GetInstance().GetDelta();
 	if (m_AccuSec >= m_UpdateInterval)
 	{
 		m_AccuSec -= m_UpdateInterval;
@@ -25,7 +25,7 @@ void FPSCounter::Update()
 		// Get text component if its not there
 		if (m_pText == nullptr)
 		{
-			m_pText = GetOwner()->GetComponent<dae::TextComponent>();
+			m_pText = GetOwner()->GetComponent<arche::TextComponent>();
 
 			if (m_pText	== nullptr) return;
 		}

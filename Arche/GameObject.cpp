@@ -2,7 +2,7 @@
 #include "ResourceManager.h"
 #include "Component.h"
 
-using namespace dae;
+using namespace arche;
 
 GameObject::GameObject()
 	:m_Id{s_IdCounter}
