@@ -1,13 +1,8 @@
 # Minigin-BubbleBobble
-GitHub repo: https://github.com/MendelDebrabandere/Minigin-BubbleBobble
+GitHub repo: https://github.com/MendelDebrabandere/Arche/tree/Minigin-BubbleBobble
 
 A game engine made myself in the Programming 4 course in DAE:
 ![BubbleBobble](https://github.com/MendelDebrabandere/Minigin-BubbleBobble/assets/95921047/ada02a54-47c9-4378-bb1b-a12e8a51baaa)
-
-This is a project that is based on this simple start project: https://github.com/avadae/minigin
-
-The start project is basically just a C++ Visual Studio project with SDL set up.
-All the game engine stuff is added by myself.
 
 ## Minigin
 This is the engine part of the project. It is written and designed in a way that it is a self-sufficient engine, as if it was made for publishing.
